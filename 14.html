@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>반복문 배우기 - for in</title>
+    </head>
+    <body>
+        <script>
+            var store = {snack: 1000, flower:5000, beverage: 2000};
+
+            for (var item in store) {
+                if(!store.hasOwnProperty(item)) continue;
+
+                console.log(item + '는 가격이' + store[item] + '입니다.');
+            }
+        </script>
+    </body>
+</html>
