@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체이해하기2(속성 접근/추가/수정/삭제)</title>
+</head>
+<body>
+    <script>
+        var family = {
+            'address': 'Soeul',
+            members:{},
+            addFamily:function(age, name, role){
+                this.members[role] = {
+                    age:age,
+                    name:name
+                };
+            },
+            getHeadcount: function(){
+                return Object.keys(this.members).length;
+            }
+        };
+        family.addFamily(30, 'choloe','aunt');
+        family.addFamily(3, 'lyn','niece');
+        family.addFamily(10, 'dangdangi','dog');
+        console.log(family.getHeadcount());//3
+        var printMembers = function(){
+            var members = family.members;
+            for(role in members){
+                console.log('role =>' + role + ', name =>' + members[role].name + ', age =>' + members[role].age);
+            }
+        }
+        printMembers();
+
+        var members = family.members;
+        members['nephew'] = {age:3,name:'hyun'};//추가
+        members.niece = {age:5,name:'lyn'};//수정
+        delete members.aunt;//삭제
+        delete members['dogs'];//삭제
+        printMembers();
+
+    </script>
+</body>
+</html>

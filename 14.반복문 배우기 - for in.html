@@ -4,11 +4,11 @@
     </head>
     <body>
         <script>
+            //for문과 차이점은 순회조건과 내부요소 접근방식의 차이 
             var store = {snack: 1000, flower:5000, beverage: 2000};
 
             for (var item in store) {
-                if(!store.hasOwnProperty(item)) continue;
-
+                if(!store.hasOwnProperty(item)) continue;//hasOwnProperty 는 해당 내부에 ITEM키값을 조회 없으면컨티뉴 다음코드실행
                 console.log(item + '는 가격이' + store[item] + '입니다.');
             }
         </script>

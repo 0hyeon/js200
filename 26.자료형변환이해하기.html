@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26.자료형변환이해하기</title>
+</head>
+<body>
+    <script>
+        console.log("5" + 1 );//51
+        console.log("5" - 1 );//4 //뺄셈 나눗셈 곳셈은 항상 숫자형을 반환 
+        console.log("5" * 2 );//10
+        console.log("There is" + 5 );//There is 5
+        console.log("Five" * 2);//Non
+
+        var str = 5 + "1";
+        console.log(str);//51
+        console.log(typeof str);//string 
+
+        var num = +str;//51
+        console.log(typeof num);//number 
+
+        var str = String(num);//51
+        console.log(typeof str);//string
+
+        var num = Number(num);//51
+        console.log(typeof num);//string
+
+    </script>
+</body>
+</html>

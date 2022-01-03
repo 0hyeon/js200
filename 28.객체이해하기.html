@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체이해하기</title>
+</head>
+<body>
+    <script>
+        var family = {
+            'address': 'Soeul',
+            members:{},
+            addFamily:function(age, name, role){
+                this.members[role] = {
+                    age:age,
+                    name:name
+                };
+            },
+            getHeadcount: function(){
+                return Object.keys(this.members).length;
+            }
+        };
+        family.addFamily(30, 'choloe','aunt');
+        family.addFamily(31, 'loe','nice');
+        family.addFamily(32, 'cho','dog');
+        console.log(family.getHeadcount());//3
+    </script>
+</body>
+</html>

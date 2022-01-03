@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30.es6의향상된객체문법-단축속서명.html</title>
+</head>
+<body>
+    <script>
+        var address = 'Soeul';
+        var members = {};
+        var addFamily = function(age, name, role){
+            this.members[role] = {age,name};
+        }
+        var getHeadcount = function(){
+                return Object.keys(this.members).length;
+        };
+
+        family.addFamily(30, 'choloe','aunt');
+        family.addFamily(3, 'lyn','niece');
+        family.addFamily(10, 'dangdangi','dog');
+        console.log(family.getHeadcount());//3
+    </script>
+</body>
+</html>

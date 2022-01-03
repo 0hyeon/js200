@@ -4,6 +4,7 @@
     </head>
     <body>
         <script>
+            // WHILTE문의 조건식은TURE , FALSE만 가능
             var hometown = [
                 {name: '진', place:'과천'},
                 {name: '남준', place:'일산', city:'고양'},
@@ -12,9 +13,9 @@
             ]
 
             var ishomeTown = function(h,name){
-                console.log(`함수가 실행되었습니다. ${h.city} 도시에서 ${name}을 찾습니다.`);
+                console.log(`함수가 실행되었습니다. ${h.city} 도시에서 ${name}을 찾습니다.`);//고양,호석
 
-                if(h.name === name){
+                if(h.name === name){//h인자와 name인자가 다른경우  false 반환하여 함수 종료 
                     console.log(`${h.name}의 고향은 ${h.city} ${h.place} 입니다.`);
                     return true;
                 }
@@ -22,9 +23,9 @@
             }
 
             var h;
-            while (h = hometown.shift()){
-                if (!h.name || !h.place || !h.city) continue;
-
+            while (h = hometown.shift()){ //shift는 배열에 앞에서부터 차례로 배열에 담는다
+                if (!h.name || !h.place || !h.city) continue;//속성한개라도 없으면 제외 
+                //진,과천이 넘어감
                 var result = isHometown(h,'호석');
                 if(result) break;
             }

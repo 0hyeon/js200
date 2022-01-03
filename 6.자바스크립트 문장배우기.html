@@ -18,12 +18,8 @@
             "Chloe" + 3
             greeting()
         }
-
-        greeting(//함수 인자에서는 값을 넣어야 
-            if(ture){//명령문 입력시 오류
-                console.log("It is not accepttable")
-            }
-        )
+        //함수 인자값에는 인자만 넣어야, IF문을 넣어 일부러  발생한 오류 
+        greeting( if(true){console.log("It is not accepttable")} )
     </script>
 </body>
 </html>
