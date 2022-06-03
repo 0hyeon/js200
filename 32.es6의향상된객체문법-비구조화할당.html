@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>32.es6의향상된객체문법-비구조화할당</title>
+</head>
+<body>
+  <script>
+    var obj = {a:1, b:2, c:30, d:44, e:5};
+
+    var {a,c} = obj;
+    console.log(`a >>> ${a}`);
+    console.log(`c >>> ${c}`);
+
+    var {a:newA=10, f:newF=5}= obj;
+    console.log(`newA >>> ${newA}`);//1
+    console.log(`newF >>> ${newF}`);//5
+    //undefined의 경우 a,newA=10 있는경우 a,newA는 기존 할당된 a값을 a,newA가 가져감 고로 1
+    //f,newF는 할당이 안되어있기 때문에 5
+  </script>
+</body>
+</html>

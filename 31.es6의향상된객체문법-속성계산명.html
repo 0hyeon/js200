@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>31.es6의향상된객체문법-속성계산명</title>
+</head>
+<body>
+  <script>
+    var obj = {};
+    for (var i = 0;i < 4; i++){
+      obj['key' + i ] = i;
+    }
+    console.log("obj : ",obj);
+
+    var profile = 'chloe:30';
+    var person = {
+      [profile] : true,
+      [profile.split(':')[0]]: profile.split(':')[1]
+    };
+    console.log("person : ",person);
+  </script>
+</body>
+</html>
