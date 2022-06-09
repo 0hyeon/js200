@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>36.arguments객체이해하기</title>
+</head>
+<body>
+  <script>
+    function sum(){
+      var total = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+      }
+      console.log(arguments instanceof Array);//false 배열이 아니다 
+      return total;
+    }
+    var sumOf1to3 = sum(1,2,3);
+    console.log('sumOf1to3 : ',sumOf1to3);//6
+
+    function testArg(){
+      var newArr = Array.prototype.slice.call(arguments);
+      console.log(newArr);//["a","b"] ==> 
+      console.log(newArr.indexOf('b'));//1 ==> b가 있으면 1반환 없으면 -1 반환 
+      console.log(arguments.indexOf('b'));//error
+    }
+    testArg('a','b');
+  </script>
+</body>
+</html>
